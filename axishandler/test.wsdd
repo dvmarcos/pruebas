@@ -1,0 +1,17 @@
+<!-- 
+Generar achivo client-config.wsdd
+java -cp "/lib/*" org.apache.axis.utils.Admin client test.wsdd
+
+-->
+<deployment xmlns="http://xml.apache.org/axis/wsdd/"
+	xmlns:java="http://xml.apache.org/axis/wsdd/providers/java">
+	<handler name="test" type="java:package.MyHandler" />
+	<transport name="http"
+		pivot="java:org.apache.axis.transport.http.HTTPSender">
+		<requestFlow>
+			<handler type="test" />
+		</requestFlow>
+	</transport>
+</deployment>
+
+
