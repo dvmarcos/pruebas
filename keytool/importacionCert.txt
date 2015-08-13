@@ -1,0 +1,2 @@
+"%JAVA_HOME%\jre\bin>keytool -import -noprompt -trustcacerts -file ..\lib\secu
+rity\-.msc.es.crt -keystore ..\lib\security\cacerts -storepass changeit

@@ -1,0 +1,11 @@
+
+
+%JAVA_HOME%\bin\keytool -genkey -alias tomcat -keyalg RSA  -keystore D:\apache-tomcat-6.0.35\keystore
+
+%JAVA_HOME%\bin\keytool -genkey -alias tomcat -keyalg RSA -keystore D:\apache-tomcat-6.0.35\keystore\keystorelocal
+
+%JAVA_HOME%\bin\keytool -certreq -keyalg RSA -alias tomcat -file certlocal.csr -keystore D:\apache-tomcat-6.0.35\keystore\keystorelocal
+
+	
+%JAVA_HOME%\bin\keytool -import -alias tomcat -keystore D:\apache-tomcat-6.0.35\keystore\keystorelocal -file certlocal.csr
+
