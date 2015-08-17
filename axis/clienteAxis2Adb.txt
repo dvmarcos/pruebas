@@ -1,0 +1,3 @@
+#Generación de stub axis2 adb
+
+%AXIS2_HOME%\bin\WSDL2Java -uri https://urlwebservice?WSDL -p nombre.paquete -d adb -s
