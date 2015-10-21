@@ -1,0 +1,33 @@
+$ git init # Se inicia proyecto, creando repositorio vacío en .git/
+
+$ git add random.js # añade fichero random.js al índice
+
+$ git add . # añade resto de cambios a índice
+
+$ git commit -m ‘random versión 1’ # congela 1a versión
+
+# Creamos una cuenta en GITHUB y un repositorio vacío random para subir el proyecto
+# Asociamos “origin” a repositorio remoto en GITHUB https:// ...
+$ git remote add origin https:...
+
+$ git push origin master # subimos la rama “master” a repositorio remoto “origin”
+
+# Clonamos repositorio remoto https://github.com/jquemada/random en directorio ramdom-2
+$ git clone https://github.com/jquemada/random random-2
+$ cp -r random random-3 # random puede copiarse. random-3 sera otro repo. independiente
+
+
+# Ayuda en línea de comandos
+$ git init --help # muestra ayuda en línea (manual) de “git init”
+...........
+$ git add --help # muestra ayuda en línea (manual) de “git add”
+...........
+$ git commit --help # muestra ayuda en línea (manual) de “git commit”
+
+
+# La historia de versiones (commits) de de la rama en la que se está trabajando
+# -> se muestra con “git log”
+# “git log --stat” # muestra estadísticas
+# “git log —graph” # muestra árbol
+# “git log --oneline” # muestra resumen de cada commits en 1 linea
+# “git log -5” # muestra 5 últimos commits
