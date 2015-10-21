@@ -1,0 +1,45 @@
+/**
+
+	 * extrae el valor de un nodo
+     * determinado */
+	
+	private static String getNodo(Node nodo, String path) {
+
+		// Extraemos cada nodo de la ruta en tokens distintos
+		StringTokenizer st = new StringTokenizer(path, SEPARADOR);
+		String nodoActual = st.nextToken();
+		int niveles = st.countTokens();
+
+		// Sacamos la lista de nodos hijo que tiene el raiz
+		NodeList nodos = nodo.getChildNodes();
+		StringBuffer newPath = new StringBuffer("");
+
+		// Si tiene algun nivel construimos la ruta a la que acceder separando
+		// cada nodo por una barra
+		if (niveles > 0) {
+			newPath = new StringBuffer(st.nextToken());
+			while (st.hasMoreTokens()) {
+				newPath.append(SEPARADOR).append(st.nextToken());
+			}
+		}
+
+		// Llamamos a si misma hasta que tenga nivel 0 para poder extraer el
+		// valor que buscamos, si no lo encuentra devolvemos 'vacio'
+		for (int i = 0; i < nodos.getLength(); i++) {
+			Node childNode = nodos.item(i);
+			if (childNode.getNodeName().equals(nodoActual)) {
+				if (niveles > 0) {
+					return getNodo(childNode, newPath.toString());
+				} else {
+					if (childNode.getFirstChild() != null) {
+						return childNode.getFirstChild().getNodeValue();
+					} else {
+						return "";
+					}
+
+				}
+			}
+		}
+
+		return null;
+	}

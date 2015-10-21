@@ -1,0 +1,35 @@
+
+	public static String toHex(String parametro) throws Exception {
+
+		
+		String hexstr = "";
+		
+		if (!Validaciones.isNullOrBlank(parametro)) {
+
+			char[] car = Hex.encodeHex(parametro.getBytes("UTF-8"));
+				
+			
+				hexstr = new String(car);
+				
+		}
+		return hexstr;
+	}
+
+
+	public static String toDec(String parametroHex) throws UnsupportedEncodingException, Exception {
+
+		String str = "";
+		
+		if (!Validaciones.isNullOrBlank(parametroHex)) {
+
+			byte[] bytes = Hex.decodeHex(parametroHex.toCharArray());
+				
+			
+			str = new String(bytes, "UTF8");
+				
+		}
+		
+
+		
+		return str;
+	}

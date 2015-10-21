@@ -1,0 +1,46 @@
+/**
+	 * Obtiene el string de un xml.
+
+	 */
+
+
+		StringWriter strWriter = null;
+		XMLSerializer xmlSerializer = null;
+		OutputFormat outFormat = null;
+		String xmlStr = null;
+
+		try {
+			xmlSerializer = new XMLSerializer();
+			strWriter = new StringWriter();
+			outFormat = new OutputFormat();
+
+			
+			outFormat.setEncoding("ISO-8859-1");
+			outFormat.setVersion("1.0");
+			if (cabecera){
+			outFormat.setIndenting(true); 
+			outFormat.setIndent(3);
+			}
+			else {outFormat.setIndenting(false); 
+			outFormat.setIndent(0);}
+			outFormat.setLineSeparator("\n");
+			outFormat.setOmitXMLDeclaration(!cabecera);
+
+			
+			xmlSerializer.setOutputCharStream(strWriter);
+
+			
+			xmlSerializer.setOutputFormat(outFormat);
+
+			// Serializa el documento XML
+			xmlSerializer.serialize(xmlDoc);
+			xmlStr = strWriter.toString();
+			strWriter.close();
+		
+		
+
+		} catch (IOException ioEx) {
+			
+		} catch (Exception e) {
+			
+		}

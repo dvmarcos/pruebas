@@ -25,9 +25,20 @@ $ git add --help # muestra ayuda en línea (manual) de “git add”
 $ git commit --help # muestra ayuda en línea (manual) de “git commit”
 
 
+
+# Para modificar el último commit usaremos git commit --amend -m …
+# Para cambiar el mensaje de log.
+
+
+
+
+
 # La historia de versiones (commits) de de la rama en la que se está trabajando
 # -> se muestra con “git log”
 # “git log --stat” # muestra estadísticas
 # “git log —graph” # muestra árbol
 # “git log --oneline” # muestra resumen de cada commits en 1 linea
 # “git log -5” # muestra 5 últimos commits
+
+
+$ git reset 34ac2 # restaura versión 34ac2 dejando los cambios realizados en las versiones eliminadas en directorio de trabajo

@@ -1,0 +1,55 @@
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutput;
+import java.io.ObjectOutputStream;
+
+
+
+	 public static String serializar(Object dto)
+	    {
+	        ByteArrayOutputStream out = null;
+	        String aux = "";
+	        try
+	        {
+	            out = new ByteArrayOutputStream();
+	            ObjectOutput encode = new ObjectOutputStream(out);
+	            encode.writeObject(dto);
+	            encode.flush();
+	            encode.close();
+	            out.flush();
+	            
+                aux = new String(Base64.encodeBase64(out.toByteArray()), "UTF-8");
+	            
+	        }
+	        catch(Exception e)
+	        {
+	            throw new RuntimeException(e.getMessage(), e);
+	        }
+	        return aux;
+	    }
+
+	 
+
+	public static Object deserializar(String sDto)
+	    {
+	        Object dto = new Object();
+	        byte [] auxb = null;
+	        try
+	        {
+	        	 
+	        	 auxb = Base64.decodeBase64(sDto.getBytes("UTF-8"));
+	        	 ByteArrayInputStream input = new ByteArrayInputStream(auxb);
+	        	 
+	        	 ObjectInputStream deco = new ObjectInputStream(input);
+		         dto = deco.readObject();
+	        	 
+	            
+	        }
+	        catch(Exception e)
+	        {
+	            throw new RuntimeException(e.getMessage(), e);
+	        }
+	        return dto;
+	    }
