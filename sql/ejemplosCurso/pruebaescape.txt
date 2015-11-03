@@ -1,0 +1,7 @@
+SELECT 'Pedro' from dual;
+select  'Pedro' Nombre from dual;
+select emp.empno from emp;
+select * from tprueba where profesion like '%Prog__mador%';
+select * from tprueba where profesion like '%Ana$_ist%' escape '$';
+select count(*) from emp where deptno != any(10,20);
+select ename, sal + comm, sal, comm  from emp order by 2, ename;
