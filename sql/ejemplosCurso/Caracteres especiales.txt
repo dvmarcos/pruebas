@@ -1,0 +1,18 @@
+Si no especificamos ^ entre corchetes indica el principio de la cadena.
+	[:alnum:]	: Caracteres alfanuméricos
+	[:alpha:]	: Solo caracteres.
+	[:blank:]	: Espacios y tabuladores.
+	[:digit:]	: Dígitos.
+	[:lower:]	: Caracteres en minúsculas.
+	[:punct:]	: " # $ % & ' ( ) * + , - . / : ; < = > ? @ [ ] ^ _ ` { | } ~
+	[:print:]	: [:alpha:]+[:punct:]
+	[:space:]	: Caracteres de espacio.
+	[:upper:]	: Caracteres en mayúsculas
+	?		: zero o una ocurrencia
+	*		: zero o mas caracteres
+	+		: uno o mas caracteres
+	{m}		: exactamente m ocurrencias.
+	{m,n}		: al menos m ocurrencias y no mas de n ocurrencias.
+	{m,}		: m o mas ocurrencias.
+	(patron | patron2 | patron3) 	:| es un OR entre patrones.
+
