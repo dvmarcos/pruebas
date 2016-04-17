@@ -1,33 +1,35 @@
-$ git init # Se inicia proyecto, creando repositorio vacío en .git/
+$ git init # Se inicia proyecto, creando repositorio vacÃ­o en .git/
 
-$ git add random.js # añade fichero random.js al índice
+#crear fichero .gitignore con el contenido por cada lÃ­nea de ficheros y directorios que no se quieran subir
 
-$ git add . # añade resto de cambios a índice
+$ git add fichero # aÃ±ade fichero  al Ã­ndice
 
-$ git commit -m ‘random versión 1’ # congela 1a versión
+$ git add . # aÃ±ade resto de cambios a Ã­ndice
 
-# Creamos una cuenta en GITHUB y un repositorio vacío random para subir el proyecto
-# Asociamos “origin” a repositorio remoto en GITHUB https:// ...
+$ git commit -m â€˜random versiÃ³n 1â€™ # congela 1a versiÃ³n
+
+# Creamos una cuenta en GITHUB y un repositorio vacÃ­o random para subir el proyecto
+# Asociamos â€œoriginâ€ a repositorio remoto en GITHUB https:// ...
 $ git remote add origin https:...
 
-$ git push origin master # subimos la rama “master” a repositorio remoto “origin”
+$ git push origin master # subimos la rama â€œmasterâ€ a repositorio remoto â€œoriginâ€
 
 # Clonamos repositorio remoto https://github.com/jquemada/random en directorio ramdom-2
 $ git clone https://github.com/jquemada/random random-2
 $ cp -r random random-3 # random puede copiarse. random-3 sera otro repo. independiente
 
 
-# Ayuda en línea de comandos
-$ git init --help # muestra ayuda en línea (manual) de “git init”
+# Ayuda en lÃ­nea de comandos
+$ git init --help # muestra ayuda en lÃ­nea (manual) de â€œgit initâ€
 ...........
-$ git add --help # muestra ayuda en línea (manual) de “git add”
+$ git add --help # muestra ayuda en lÃ­nea (manual) de â€œgit addâ€
 ...........
-$ git commit --help # muestra ayuda en línea (manual) de “git commit”
+$ git commit --help # muestra ayuda en lÃ­nea (manual) de â€œgit commitâ€
 
 
-# La historia de versiones (commits) de de la rama en la que se está trabajando
-# -> se muestra con “git log”
-# “git log --stat” # muestra estadísticas
-# “git log —graph” # muestra árbol
-# “git log --oneline” # muestra resumen de cada commits en 1 linea
-# “git log -5” # muestra 5 últimos commits
+# La historia de versiones (commits) de de la rama en la que se estÃ¡ trabajando
+# -> se muestra con â€œgit logâ€
+# â€œgit log --statâ€ # muestra estadÃ­sticas
+# â€œgit log â€”graphâ€ # muestra Ã¡rbol
+# â€œgit log --onelineâ€ # muestra resumen de cada commits en 1 linea
+# â€œgit log -5â€ # muestra 5 Ãºltimos commits
